@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Buscador de libros">
+    <title>Books Search</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header id="header">
+        <h1 id="title">Books Search</h1>
+    </header>
+    <main class="container">
+        <div>
+            <form id="search-form">
+                <div class="row">
+                    <div class="three columns">
+                        <label for="editorial">Editorial</label>
+                        <select name="editorial" id="editorial" class="u-full-width">
+                            <option value="">Seleccionar</option>
+                            <option value="anaya ,multimedia">Anaya Multimedia</option>
+                            <option value="vintage español">Vintage Español</option>
+                            <option value="audible studios">Audible Studios</option>
+                            <option value="hachette audio">Hachette Audio</option>
+                            <option value="publicaciones Faro de gracia">Publicaciones Faro de Gracia</option>
+                            <option value="vida">Vida</option>
+                        </select>
+                    </div>
+                    <div class="three columns">
+                        <label for="category">Categoría</label>
+                        <select name="category" id="category">
+                            <option value="">Seleccionar</option>
+                            <option value="cristianismo">Cristianismo</option>
+                            <option value="ciencia ficción">Ciencia Ficción</option>
+                            <option value="seguridad">Seguridad</option>
+                        </select>
+                    </div>
+                    <div class="three columns">
+                        <label for="year">Año</label>
+                        <select name="year" id="year">
+                            <option value="">Seleccionar</option>
+                            <option value="2007">2007</option>
+                            <option value="2018">2018</option>
+                            <option value="2021">2021</option>
+                            <option value="2008">2008</option>
+                            <option value="2004">2004</option>
+                            <option value="2006">2006</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="three columns">
+                        <label for="language">Idioma</label>
+                        <select name="language" id="language">
+                            <option value="">Seleccionar</option>
+                            <option value="español">Español</option>
+                            <option value="ingles">Inglés</option>
+                        </select>
+                    </div>
+                    <div class="three columns">
+                        <label for="author">Autor</label>
+                        <select name="author" id="author">
+                            <option value="">Seleccionar</option>
+                            <option value="Bill Lubanovic">Bill Lubanovic</option>
+                            <option value="Andres Oppenheimer">Andres Oppenheimer</option>
+                            <option value="Andy Weir">Andy Weir</option>
+                            <option value="Andrzej Sapkowski">Andrzej Sapkowski</option>
+                            <option value="R.C. Sproul">R.C. Sproul</option>
+                            <option value="john Piper">john Piper</option>
+                        </select>
+                    </div>
+                    <div class="three columns">
+                        <label for="pages">Páginas</label>
+                        <select name="pages" id="pages">
+                            <option value="">Seleccionar</option>
+                            <option value="269">269</option>
+                            <option value="292">292</option>
+                            <option value="336">336</option>
+                            <option value="448">448</option>
+                            <option value="482">482</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div>
+            <h2>Resultados</h2>
+            <div id="results">
+
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>
+        <p id="copy">
+            Hecho con pasión por <a href="#">Luis Sanchez</a>
+        </p>
+    </footer>
+    
+    <script src="/js/app.js"></script>
+    <script src="/js/db.js"></script>
+</body>
+</html>

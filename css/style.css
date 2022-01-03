@@ -1,0 +1,80 @@
+:root{
+    --blueLight: #366ED8;
+    --blueDark: #064ACB;
+    --orange: #F3A953;
+    --gray: #F2F3F3;
+    --white: #fff;
+    --black: #000;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,:before,:after{
+    box-sizing: inherit;
+}
+
+body{
+    font-size: 1.6rem;
+    line-height: 1.8;
+}
+
+h1{
+    font-size: 4rem;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: var(--white);
+}
+
+h1,h2{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+select,input,textarea{
+    width: 100%;
+}
+
+.container{
+    max-width: 120rem;
+    width: 95%;
+    margin: 0 auto;
+}
+
+header{
+    background: var(--blueLight);
+    padding: 1rem 0;
+    margin-bottom: 5rem;
+}
+
+div.row{
+    display: flex;
+    justify-content: center;
+}
+
+#search-form{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+#search-form .row{
+    padding: 2rem auto;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--orange);
+    height: 7rem;
+}
+
+#copy{
+    font-weight: 700;
+}
