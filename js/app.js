@@ -143,6 +143,8 @@ function showBooks(books){
 // Filtrar libros
 function booksFilter(){
 
+    cleanHTML();
+
     const resultsQuery = books.filter(editorialFilter).filter(categoryFilter).filter(authorFilter).filter(yearFilter).filter(pagesFilter).filter(languageFilter);
 
     if(resultsQuery.length > 0){
@@ -204,15 +206,18 @@ function languageFilter(book){
 }
 
 function cleanHTML(){
-    while(results.firstChild){
-        results.removeChild(results.firstChild);
+
+    const rs = document.querySelector('#results');
+
+    while(rs.firstChild){
+        rs.removeChild(rs.firstChild);
     }
 
 }
 function withoutResults(){
     cleanHTML();
-    const parrafo = document.querySelector('p');
-    parrafo.classList.add('nothing');
-    parrafo.innerText = 'Sin resultados, prueba suerte con otra consulta';
-    results.appendChild(parrafo);
+    const noResults = document.createElement('p');
+    noResults.classList.add('nothing');
+    noResults.appendChild(document.createTextNode('Sin resultados. Intenta con una nueva consulta'));
+    document.querySelector('#results').appendChild(noResults);
 }
