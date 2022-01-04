@@ -134,6 +134,7 @@ function showBooks(books){
 
     books.forEach(book =>{
         const parrafo = document.createElement('p');
+        parrafo.classList.add('card');
         parrafo.innerHTML = `<span class='book-name'>${book.name}</span>: Escrito por ${book.author}, publicado por la editorial ${book.editorial} en el ${book.year}. Contiene ${book.pages} páginas.`;
         contenedor.appendChild(parrafo);
     });
@@ -217,7 +218,7 @@ function cleanHTML(){
 function withoutResults(){
     cleanHTML();
     const noResults = document.createElement('p');
-    noResults.classList.add('nothing');
+    noResults.classList.add('nothing card');
     noResults.appendChild(document.createTextNode('Sin resultados. Intenta con una nueva consulta'));
     document.querySelector('#results').appendChild(noResults);
 }
