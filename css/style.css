@@ -28,6 +28,10 @@ h1{
     color: var(--white);
 }
 
+h2{
+    font-size: 3rem;
+}
+
 h1,h2{
     text-align: center;
 }
@@ -42,8 +46,12 @@ select,input,textarea{
 
 .container{
     max-width: 120rem;
-    width: 95%;
+    width: 90%;
     margin: 0 auto;
+}
+
+.three.columns{
+    width: 100%;
 }
 
 header{
@@ -52,9 +60,11 @@ header{
     margin-bottom: 5rem;
 }
 
-div.row{
-    display: flex;
-    justify-content: center;
+@media(min-width: 768px){
+    div.row{
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 #search-form{
@@ -63,18 +73,29 @@ div.row{
     margin: 0 auto;
 }
 
-#search-form .row{
-    padding: 2rem auto;
+#list-results{
+    margin: 2rem 0;
+}
+
+.book-name{
+    text-transform: capitalize;
+    font-weight: bold;
 }
 
 footer{
-    display: flex;
-    justify-content: center;
     align-items: center;
     background-color: var(--orange);
-    height: 7rem;
+    display: flex;
+    justify-content: center;
 }
 
 #copy{
     font-weight: 700;
+    padding: 3rem 0;
+    margin: 0;
+    color: var(--white);
+}
+
+#copy a{
+    color: var(--blueDark);
 }

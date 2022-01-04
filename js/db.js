@@ -3,8 +3,8 @@ const books = [
         id        : 1,
         category  : 'tecnología',
         editorial : 'anaya multimedia',
-        book      : 'Administración de sistemas Linux',
-        author    : 'Bill Lubanovic',
+        name      : 'administración de sistemas Linux',
+        author    : 'bill lubanovic',
         year      : 2007,
         pages     : 336,
         language  : 'español',
@@ -15,8 +15,8 @@ const books = [
         id        : 2,
         category  : 'tecnología',
         editorial : 'vintage español',
-        book      : '¡Sálvese quien pueda!: El futuro del trabajo en la era de la automatización (Spanish Edition)',
-        author    : 'Andres Oppenheimer ',
+        name      : '¡sálvese quien pueda!: el futuro del trabajo en la era de la automatización (spanish edition)',
+        author    : 'andres oppenheimer ',
         year      : 2018,
         pages     : 448,
         language  : 'español',
@@ -26,9 +26,9 @@ const books = [
     {
         id        : 3,
         category  : 'ciencia ficción',
-        editorial : 'Audible Studios',
-        book      : 'Project Hail Mary',
-        author    : 'Andy Weir',
+        editorial : 'audible studios',
+        name      : 'project hail mary',
+        author    : 'andy weir',
         year      : 2021,
         pages     : 482,
         language  : 'inglés',
@@ -38,9 +38,9 @@ const books = [
     {
         id        : 4,
         category  : 'ciencia ficción',
-        editorial : 'Hachette audio',
-        book      : 'The Last Wish',
-        author    : 'Andrzej Sapkowski',
+        editorial : 'hachette audio',
+        name      : 'the last wish',
+        author    : 'andrzej sapkowski',
         year      : 2008,
         pages     : 292,
         language  : 'inglés',
@@ -51,8 +51,8 @@ const books = [
         id        : 5,
         category  : 'cristianismo',
         editorial : 'publicaciones faro de gracia',
-        book      : 'La santidad de Dios',
-        author    : 'R.C. Sproul',
+        name      : 'la santidad de dios',
+        author    : 'r.c. sproul',
         year      : 2004,
         pages     : 269,
         language  : 'español',
@@ -63,7 +63,7 @@ const books = [
         id        : 6,
         category  : 'cristianismo',
         editorial : 'vida',
-        book      : 'los deleítes de Dios',
+        name      : 'los deleítes de Dios',
         author    : 'john piper',
         year      : 2006,
         pages     : 448,
@@ -74,3 +74,6 @@ const books = [
     
 
 ]
+
+
+export {books};
