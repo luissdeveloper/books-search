@@ -26,32 +26,44 @@ function loadedEvents(){
     document.addEventListener('DOMContentLoaded',poblarSelects);
 
     // Mostrar libros
-    document.addEventListener('DOMContentLoaded',showBooks);
+    document.addEventListener('DOMContentLoaded',() => showBooks(books));
 
     // Eventlisteners
 
     editorial.addEventListener('input',e => {
         datosBusqueda.editorial = e.target.value;
+
+        booksFilter();
     });
 
     category.addEventListener('input', e => {
         datosBusqueda.category = e.target.value;
+
+        booksFilter();
     });
 
     year.addEventListener('input', e => {
         datosBusqueda.year = e.target.value;
+
+        booksFilter();
     });
 
     language.addEventListener('input',e => {
         datosBusqueda.language = e.target.value;
+
+        booksFilter();
     });
 
     author.addEventListener('input', e => {
         datosBusqueda.author = e.target.value;
+
+        booksFilter();
     });
 
     pages.addEventListener('input',e=>{
         datosBusqueda.pages = e.target.value;
+
+        booksFilter();
     })
 
 
@@ -116,20 +128,91 @@ const datosBusqueda = {
 
 // mostrar libros
 
-function showBooks(){
+function showBooks(books){
+    cleanHTML();
+    const contenedor = document.querySelector('#results');
+
     books.forEach(book =>{
         const parrafo = document.createElement('p');
         parrafo.innerHTML = `<span class='book-name'>${book.name}</span>: Escrito por ${book.author}, publicado por la editorial ${book.editorial} en el ${book.year}. Contiene ${book.pages} páginas.`;
-        results.appendChild(parrafo);
+        contenedor.appendChild(parrafo);
     });
 }
 
 
+// Filtrar libros
+function booksFilter(){
+
+    const resultsQuery = books.filter(editorialFilter).filter(categoryFilter).filter(authorFilter).filter(yearFilter).filter(pagesFilter).filter(languageFilter);
+
+    if(resultsQuery.length > 0){
+        showBooks(resultsQuery);
+    }else{
+        withoutResults();
+    }
+}
+
 
 // Filtros independientes
 
-function editorialFilter(books){
+function editorialFilter(book){
     if(datosBusqueda.editorial){
-        return books.editorial
+        return book.editorial == datosBusqueda.editorial;
     }
+
+    return book;
+}
+
+function categoryFilter(book){
+    if(datosBusqueda.category){
+        return book.category == datosBusqueda.category;
+    }
+
+    return book;
+}
+
+function authorFilter(book){
+    if(datosBusqueda.author){
+        return book.author == datosBusqueda.author;
+    }
+
+    return book;
+}
+
+function yearFilter(book){
+    if(datosBusqueda.year){
+        return book.year == datosBusqueda.year;
+    }
+
+    return book;
+}
+
+function pagesFilter(book){
+    if(datosBusqueda.pages){
+        return book.pages == datosBusqueda.pages;
+    }
+
+    return book;
+}
+
+function languageFilter(book){
+    if(datosBusqueda.language){
+        return book.language == datosBusqueda.language;
+    }
+
+    return book;
+}
+
+function cleanHTML(){
+    while(results.firstChild){
+        results.removeChild(results.firstChild);
+    }
+
+}
+function withoutResults(){
+    cleanHTML();
+    const parrafo = document.querySelector('p');
+    parrafo.classList.add('nothing');
+    parrafo.innerText = 'Sin resultados, prueba suerte con otra consulta';
+    results.appendChild(parrafo);
 }

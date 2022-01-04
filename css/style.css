@@ -93,9 +93,14 @@ footer{
     font-weight: 700;
     padding: 3rem 0;
     margin: 0;
-    color: var(--white);
+    color: var(--black);
 }
 
 #copy a{
     color: var(--blueDark);
+}
+
+#copy a:hover{
+    color: var(--blueLight);
+    transition: 0.3s;
 }
